@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Usuários</title>
+    <link rel="stylesheet" href="../css/dashboardAdm.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Gerenciamento de Usuários</h1>
+        <div class="logout">
+           <center> <a href="/logout"><button>Logout</button></a> </center><br>
+        </div>
+        <div class="input-section">
+            <h2>Inserir Novo Usuário</h2>
+            <form id="insertForm">
+                <div class="form-group">
+                    <label for="newName">Nome:</label>
+                    <input type="text" id="newName" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPhone">Telefone:</label>
+                    <input type="tel" id="newPhone">
+                </div>
+                <div class="form-group">
+                    <label for="newEmail">Email:</label>
+                    <input type="email" id="newEmail">
+                </div>
+                <div class="form-group">
+                    <label for="newPassWord">Senha:</label>
+                    <input type="text" id="newPassWord">
+                </div>
+                <div class="form-group">
+                    <label for="newDataNasc">Data Nascimento:</label>
+                    <input type="text" id="newDataNasc" placeholder="AAAA-MM-DD">
+                </div>
+                <div class="form-group">
+                    <label for="newStatus">Status:</label>
+                    <input type="text" id="newStatus" value="user">
+                </div>
+                <button type="submit">Inserir</button>
+            </form>
+        </div>
+
+        <div class="data-section">
+            <h2>Lista de Usuários</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                    </tbody>
+            </table>
+        </div>
+
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Editar Usuário</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editId">
+                    <div class="form-group">
+                        <label for="editName">Novo Valor:</label>
+                        <input type="text" id="editName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prop">Propriedade a Alterar:</label>
+                        <select name="options" id="prop">
+                            <option value="nome">Nome</option>
+                            <option value="email">Email</option>
+                            <option value="telefone">Telefone</option>
+                        </select>
+                    </div>
+                    <button type="submit">Salvar Alterações</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboardAdm.js"></script>
+</body>
+</html>
