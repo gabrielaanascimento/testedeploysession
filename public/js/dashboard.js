@@ -20,9 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    fetch('/users/all')
+        fetch('/users/all',)
         .then(response => response.json())
-        .then(data => populateTable(data))
+        .then(data => {
+            console.log(data)
+            populateTable(data)
+        })
         .catch(error => console.error('Erro ao buscar dados:', error));
     
 });

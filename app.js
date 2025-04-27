@@ -54,4 +54,11 @@ app.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
+app.get('/users/all', async (req, res) => {
+    const response = await fetch('https://gerenciaruserapi.vercel.app/');
+    const data = await response.json();
+    res.status(200).json(data);
+});
+
+
 app.listen(3000)
